@@ -4,6 +4,8 @@ import com.comunifield.micromarket.inventory.dto.CategoryDTO;
 import com.comunifield.micromarket.inventory.entity.Category;
 import com.comunifield.micromarket.inventory.repository.CategoryRepository;
 import com.comunifield.micromarket.inventory.service.CategoryService;
+
+import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
