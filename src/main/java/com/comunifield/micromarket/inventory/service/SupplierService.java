@@ -92,4 +92,22 @@ public class SupplierService {
         dto.setAddress(supplier.getAddress());
         return dto;
     }
+
+
+    public void addStock(StockRequestDTO dto) {
+
+        if (dto.getQuantity() <= 0) {
+            throw new RuntimeException("Cantidad inválida");
+        }
+
+        Product product = productRepository.findById(dto.getProductId())
+                .orElseThrow(() -> new RuntimeException("Producto no encontrado"));
+
+        Supplier supplier = supplierRepository.findById(dto.getSupplierId())
+                .orElseThrow(() -> new RuntimeException("Proveedor no encontrado"));
+
+        product.setStock(product.getStock() + dto.getQuantity());
+
+        productRepository.save(product);
+    }
 }

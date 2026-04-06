@@ -1,6 +1,7 @@
 package com.comunifield.micromarket.inventory.controller;
 
 
+import com.comunifield.micromarket.inventory.dto.StockRequestDTO;
 import com.comunifield.micromarket.inventory.dto.SupplierRequestDTO;
 import com.comunifield.micromarket.inventory.dto.SupplierResponseDTO;
 import com.comunifield.micromarket.inventory.service.SupplierService;
@@ -51,6 +52,12 @@ public class SupplierController {
         return supplierService.deleteSupplier(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PostMapping("/stock")
+    public ResponseEntity<String> addStock(@RequestBody StockRequestDTO dto) {
+        supplierService.addStock(dto);
+        return ResponseEntity.ok("Stock actualizado correctamente");
     }
 
     
