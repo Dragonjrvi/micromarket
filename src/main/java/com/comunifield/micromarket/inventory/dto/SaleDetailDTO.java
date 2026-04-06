@@ -1,0 +1,13 @@
+package com.comunifield.micromarket.inventory.dto;
+
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Min;
+
+public class SaleDetailDTO {
+    @NotNull(message = "Product ID is required")
+    private Long productId;
+
+    @NotNull(message = "The quantity is mandatory")
+    @Min(value = 1, message = "The amount must be greater than 0")
+    private Integer quantity;
+}
