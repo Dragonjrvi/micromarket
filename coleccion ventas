@@ -1,51 +1,92 @@
-1. CREAR EMPLEADO
-POST
-/api/employees
 {
-  "cedula": "123456",
-  "name": "Juan Perez",
-  "role": "CAJERO",
-  "entryDate": "2024-01-10",
-  "salary": 1500000
+  "info": {
+    "_postman_id": "modulo4-sales-collection",
+    "name": "Micromarket - Modulo IV Ventas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+
+    {
+      "name": "Crear Venta",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"employeeId\": 1,\n  \"details\": [\n    {\n      \"productId\": 1,\n      \"quantity\": 2\n    },\n    {\n      \"productId\": 2,\n      \"quantity\": 1\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/sales",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "sales"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Crear Venta (Error sin stock)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"employeeId\": 1,\n  \"details\": [\n    {\n      \"productId\": 1,\n      \"quantity\": 999\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/sales",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "sales"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Listar Ventas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/sales",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "sales"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Obtener Venta por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/sales/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "sales", "1"]
+        }
+      },
+      "response": []
+    }
+
+  ]
 }
-
- 2. CREAR OTRO EMPLEADO
-{
-  "cedula": "789456",
-  "name": "Ana Lopez",
-  "role": "ADMINISTRADOR",
-  "entryDate": "2023-06-01",
-  "salary": 2500000
-}
-
- 3. PROBAR ERROR (CARGO INVÁLIDO)
-{
-  "cedula": "000111",
-  "name": "Error Usuario",
-  "role": "GERENTE",
-  "entryDate": "2024-01-01",
-  "salary": 2000000
-}
-
-Debe fallar porque no está en el enum.
-
-4. LISTAR EMPLEADOS
-GET
-/api/employees
-
-5. FILTRAR POR CARGO
-GET
-/api/employees/role?role=CAJERO
-Solo devuelve cajeros.
-
-6. FILTRAR POR OTRO CARGO
-/api/employees/role?role=ADMINISTRADOR
-
-7. FILTRAR POR RANGO DE FECHAS
-GET
-/api/employees/dates?start=2023-01-01&end=2024-12-31
-
-8. ERROR EN FECHAS (formato incorrecto)
-/api/employees/dates?start=01-01-2024&end=31-12-2024
-Debe fallar porque el formato correcto es:
-yyyy-MM-dd
