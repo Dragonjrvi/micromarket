@@ -47,11 +47,19 @@ public class SupplierService {
     }
 
     public Optional<SupplierResponseDTO> getSupplierById(Long id) {
+        if (id == null) {
+            throw new RuntimeException("El id no puede ser null");
+        }
         return supplierRepository.findById(id).map(this::toDto);
     }
 
 
     public Optional<SupplierResponseDTO> updateSupplier(SupplierRequestDTO dto, Long id) {
+
+        
+        if (id == null) {
+            throw new RuntimeException("El id no puede ser null");
+        }
 
         Optional<Supplier> supplierOpt = supplierRepository.findById(id);
 
@@ -73,6 +81,10 @@ public class SupplierService {
 
 
     public Optional<SupplierResponseDTO> deleteSupplier(Long id) {
+
+        if (id == null) {
+            throw new RuntimeException("El id no puede ser null");
+        }
         Optional<Supplier> supplierOpt = supplierRepository.findById(id);
 
         if (supplierOpt.isPresent()) {
@@ -92,4 +104,26 @@ public class SupplierService {
         dto.setAddress(supplier.getAddress());
         return dto;
     }
+
+
+    public void addStock(StockRequestDTO dto) {
+
+    if (dto.getQuantity() <= 0) {
+        throw new RuntimeException("Cantidad inválida");
+    }
+
+    Product product = productRepository.findById(dto.getProductId())
+            .orElseThrow(() -> new RuntimeException("Producto no encontrado"));
+
+    Supplier supplier = supplierRepository.findById(dto.getSupplierId())
+            .orElseThrow(() -> new RuntimeException("Proveedor no encontrado"));
+
+    if (!product.getSuppliers().contains(supplier)) {
+        product.getSuppliers().add(supplier);
+    }
+
+    product.setStock(product.getStock() + dto.getQuantity());
+
+    productRepository.save(product);
+}
 }
