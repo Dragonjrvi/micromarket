@@ -1,0 +1,59 @@
+{
+  "info": {
+    "_postman_id": "47236013-e8ef-4719-b3b3-491dd7cea0f5",
+    "name": "localhost:8080",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "45074741",
+    "_collection_link": "https://go.postman.co/collection/45074741-47236013-e8ef-4719-b3b3-491dd7cea0f5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Listar proveedores",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Obtener proveedor por id",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Crear proveedor",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar Proveedor",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar proveedor por id",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Entrada de almacén",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
