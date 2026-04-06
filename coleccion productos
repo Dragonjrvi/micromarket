@@ -1,87 +1,206 @@
- 1. CREAR CATEGORÍA
-POST
-/categories
-Body:
-
 {
-  "name": "Bebidas"
+  "info": {
+    "_postman_id": "modulo1-inventory-collection",
+    "name": "Micromarket - Modulo I Inventario",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+
+    {
+      "name": "Listar categorias",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/categories",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "categories"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Obtener categoria por id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/categories/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "categories", "1"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Crear categoria",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Bebidas\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/categories",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "categories"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Actualizar categoria",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Bebidas Actualizadas\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/categories/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "categories", "1"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Eliminar categoria",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/categories/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "categories", "1"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Listar productos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "products"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Obtener producto por id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/products/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "products", "1"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Crear producto",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Coca Cola\",\n  \"barcode\": \"123456\",\n  \"price\": 3000,\n  \"stock\": 20,\n  \"categoryId\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "products"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Actualizar producto",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Coca Cola Zero\",\n  \"barcode\": \"123456\",\n  \"price\": 3200,\n  \"stock\": 25,\n  \"categoryId\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/products/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "products", "1"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Eliminar producto (Soft Delete)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/products/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "products", "1"]
+        }
+      },
+      "response": []
+    }
+
+  ]
 }
- 2. CREAR OTRA CATEGORÍA
-{
-  "name": "Snacks"
-}
-
- 3. LISTAR CATEGORÍAS
-GET
-/categories
-Debes ver las categorías creadas.
-
-4. CREAR PRODUCTO
-POST
-/products
-Body:
-{
-  "name": "Coca Cola",
-  "barcode": "123456",
-  "price": 3000,
-  "stock": 20,
-  "categoryId": 1
-}
-5. CREAR OTRO PRODUCTO
-{
-  "name": "Pepsi",
-  "barcode": "789456",
-  "price": 2800,
-  "stock": 15,
-  "categoryId": 1
-}
-6. PROBAR ERROR (barcode duplicado)
-{
-  "name": "Error Producto",
-  "barcode": "123456",
-  "price": 1000,
-  "stock": 5,
-  "categoryId": 1
-}
-
-Debe responder:
-
-"El código de barras ya existe"
-7. LISTAR PRODUCTOS
-GET
-/products
-Solo productos activos.
-
-8. OBTENER PRODUCTO POR ID
-GET
-/products/1
-
-9. ACTUALIZAR PRODUCTO
-PUT
-/products/1
-Body:
-
-{
-  "name": "Coca Cola Zero",
-  "barcode": "123456",
-  "price": 3200,
-  "stock": 25,
-  "categoryId": 1
-}
-
-10. ELIMINAR PRODUCTO (SOFT DELETE)
-DELETE
-/products/1
-No se borra, solo se desactiva.
-
-11. VERIFICAR SOFT DELETE
-GET
-/products
-El producto eliminado ya no aparece.
-
-12. VER CATEGORÍA CON PRODUCTOS
-GET
-/categories/1
-Debe traer:
-datos de categoría
-lista de productos
