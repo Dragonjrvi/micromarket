@@ -64,6 +64,9 @@ public class SaleServiceImpl implements SaleService {
 
             // ACTUALIZAR STOCK
             product.setStock(product.getStock() - dto.getQuantity());
+            if (product.getStock()<=0) {
+                product.setActive(false);
+            }
             productRepository.save(product);
 
             // CREAR DETALLE
@@ -120,9 +123,6 @@ public class SaleServiceImpl implements SaleService {
         dto.setSubtotal(sale.getSubtotal());
         dto.setIva(sale.getIva());
         dto.setTotal(sale.getTotal());
-
-        // 👇 IMPORTANTE: relación con employee
-        dto.setId(sale.getEmployee().getId());
 
         return dto;
     }

@@ -123,6 +123,9 @@ public class SupplierService {
     }
 
     product.setStock(product.getStock() + dto.getQuantity());
+    if (product.getStock() > 0) {
+        product.setActive(true);
+    }
 
     productRepository.save(product);
 }

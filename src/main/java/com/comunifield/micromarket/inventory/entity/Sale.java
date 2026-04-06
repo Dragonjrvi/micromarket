@@ -16,11 +16,17 @@ public class Sale {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
+    @Column(name="date",nullable = false)
     private LocalDateTime date;
 
+    @Column(name="subtotal",nullable = false)
     private Double subtotal;
+    
+    @Column(name="iva",nullable = false)
     private Double iva;
+
+    @Column(name="total",nullable = false)
     private Double total;
 
     @ManyToOne

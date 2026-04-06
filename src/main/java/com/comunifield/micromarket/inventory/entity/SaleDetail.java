@@ -1,5 +1,6 @@
 package com.comunifield.micromarket.inventory.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -19,8 +20,13 @@ public class SaleDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="quantity",nullable = false)
     private Integer quantity;
+
+    @Column(name="price",nullable = false)
     private Double price;
+    
+    @Column(name="total",nullable = false)
     private Double total;
 
     @ManyToOne
