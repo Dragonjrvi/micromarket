@@ -18,7 +18,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"cedula\": \"123456\",\n  \"name\": \"Juan Perez\",\n  \"cargo\": \"CAJERO\",\n  \"fechaIngreso\": \"2024-01-10\",\n  \"salario\": 1500000\n}"
+          "raw": "{\n  \"cedula\": \"123456\",\n  \"nombre\": \"Juan Perez\",\n  \"cargo\": \"CAJERO\",\n  \"fechaIngreso\": \"2024-01-10\",\n  \"salario\": 1500000\n}"
         },
         "url": {
           "raw": "http://localhost:8080/api/employees",
@@ -43,7 +43,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"cedula\": \"000111\",\n  \"name\": \"Error Usuario\",\n  \"cargo\": \"GERENTE\",\n  \"fechaIngreso\": \"2024-01-01\",\n  \"salario\": 2000000\n}"
+          "raw": "{\n  \"cedula\": \"000111\",\n  \"nombre\": \"Error Usuario\",\n  \"cargo\": \"GERENTE\",\n  \"fechaIngreso\": \"2024-01-01\",\n  \"salario\": 2000000\n}"
         },
         "url": {
           "raw": "http://localhost:8080/api/employees",
@@ -100,7 +100,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"cedula\": \"123456\",\n  \"name\": \"Juan Actualizado\",\n  \"cargo\": \"AUXILIAR\",\n  \"fechaIngreso\": \"2024-01-10\",\n  \"salario\": 1600000\n}"
+          "raw": "{\n  \"cedula\": \"123456\",\n  \"nombre\": \"Juan Actualizado\",\n  \"cargo\": \"AUXILIAR\",\n  \"fechaIngreso\": \"2024-01-10\",\n  \"salario\": 1600000\n}"
         },
         "url": {
           "raw": "http://localhost:8080/api/employees/1",

@@ -8,27 +8,27 @@ import java.time.LocalDate;
 
 @Entity
 @Getter @Setter
-@Table(name = "employees")
+@Table(name = "employee")
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(name="document",nullable = false, unique = true)
     private String cedula;
 
-    @Column(nullable = false)
+    @Column(name="name",nullable = false)
     private String nombre;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name="position",nullable = false)
     private Cargo cargo;
 
-    @Column(nullable = false)
+    @Column(name="hire_date",nullable = false)
     private LocalDate fechaIngreso;
 
-    @Column(nullable = false)
+    @Column(name="salary",nullable = false)
     private BigDecimal salario;
 
     public enum Cargo {
