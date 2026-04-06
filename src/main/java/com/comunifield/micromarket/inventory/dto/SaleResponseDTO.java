@@ -2,6 +2,10 @@ package com.comunifield.micromarket.inventory.dto;
 
 import java.time.LocalDateTime;
 
+import lombok.Data;
+
+
+@Data
 public class SaleResponseDTO {
 
     private Long id;

@@ -1,7 +1,7 @@
-package com.comunifield.micromarket.personnel.service;
+package com.comunifield.micromarket.inventory.service;
 
-import com.comunifield.micromarket.personnel.dto.EmployeeDTO;
-import com.comunifield.micromarket.personnel.entity.Employee;
+import com.comunifield.micromarket.inventory.dto.EmployeeDTO;
+import com.comunifield.micromarket.inventory.entity.Employee;
 
 import java.time.LocalDate;
 import java.util.List;

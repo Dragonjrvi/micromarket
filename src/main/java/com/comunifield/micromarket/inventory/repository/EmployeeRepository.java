@@ -1,6 +1,6 @@
-package com.comunifield.micromarket.personnel.repository;
+package com.comunifield.micromarket.inventory.repository;
 
-import com.comunifield.micromarket.personnel.entity.Employee;
+import com.comunifield.micromarket.inventory.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

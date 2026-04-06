@@ -1,6 +1,6 @@
-package com.comunifield.micromarket.personnel.dto;
+package com.comunifield.micromarket.inventory.dto;
 
-import com.comunifield.micromarket.personnel.entity.Employee;
+import com.comunifield.micromarket.inventory.entity.Employee;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 

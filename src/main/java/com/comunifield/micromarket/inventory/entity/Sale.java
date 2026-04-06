@@ -1,13 +1,14 @@
 package com.comunifield.micromarket.inventory.entity;
 
-import com.comunifield.micromarket.employee.entity.Employee;
+import com.comunifield.micromarket.inventory.entity.Employee;
 import com.comunifield.micromarket.inventory.entity.SaleDetail;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-
+@Data
 @Entity
 @Table(name = "sale")
 public class Sale {

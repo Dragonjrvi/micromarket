@@ -1,9 +1,10 @@
-package com.comunifield.micromarket.personnel.service.impl;
+package com.comunifield.micromarket.inventory.service.impl;
 
-import com.comunifield.micromarket.personnel.dto.EmployeeDTO;
-import com.comunifield.micromarket.personnel.entity.Employee;
-import com.comunifield.micromarket.personnel.repository.EmployeeRepository;
-import com.comunifield.micromarket.personnel.service.EmployeeService;
+import com.comunifield.micromarket.inventory.dto.EmployeeDTO;
+import com.comunifield.micromarket.inventory.repository.EmployeeRepository;
+import com.comunifield.micromarket.inventory.service.EmployeeService;
+import com.comunifield.micromarket.inventory.entity.Employee;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

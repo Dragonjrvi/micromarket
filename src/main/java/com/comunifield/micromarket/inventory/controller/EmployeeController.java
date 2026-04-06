@@ -1,8 +1,9 @@
-package com.comunifield.micromarket.personnel.controller;
+package com.comunifield.micromarket.inventory.controller;
 
-import com.comunifield.micromarket.personnel.dto.EmployeeDTO;
-import com.comunifield.micromarket.personnel.entity.Employee;
-import com.comunifield.micromarket.personnel.service.EmployeeService;
+import com.comunifield.micromarket.inventory.dto.EmployeeDTO;
+import com.comunifield.micromarket.inventory.service.EmployeeService;
+import com.comunifield.micromarket.inventory.entity.Employee;
+
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;

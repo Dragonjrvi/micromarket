@@ -1,4 +1,4 @@
-package com.comunifield.micromarket.personnel.entity;
+package com.comunifield.micromarket.inventory.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

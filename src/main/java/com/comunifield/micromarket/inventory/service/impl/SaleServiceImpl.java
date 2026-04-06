@@ -122,7 +122,7 @@ public class SaleServiceImpl implements SaleService {
         dto.setTotal(sale.getTotal());
 
         // 👇 IMPORTANTE: relación con employee
-        dto.setEmployeeId(sale.getEmployee().getId());
+        dto.setId(sale.getEmployee().getId());
 
         return dto;
     }
