@@ -1,0 +1,87 @@
+ 1. CREAR CATEGORÍA
+POST
+/categories
+Body:
+
+{
+  "name": "Bebidas"
+}
+ 2. CREAR OTRA CATEGORÍA
+{
+  "name": "Snacks"
+}
+
+ 3. LISTAR CATEGORÍAS
+GET
+/categories
+Debes ver las categorías creadas.
+
+4. CREAR PRODUCTO
+POST
+/products
+Body:
+{
+  "name": "Coca Cola",
+  "barcode": "123456",
+  "price": 3000,
+  "stock": 20,
+  "categoryId": 1
+}
+5. CREAR OTRO PRODUCTO
+{
+  "name": "Pepsi",
+  "barcode": "789456",
+  "price": 2800,
+  "stock": 15,
+  "categoryId": 1
+}
+6. PROBAR ERROR (barcode duplicado)
+{
+  "name": "Error Producto",
+  "barcode": "123456",
+  "price": 1000,
+  "stock": 5,
+  "categoryId": 1
+}
+
+Debe responder:
+
+"El código de barras ya existe"
+7. LISTAR PRODUCTOS
+GET
+/products
+Solo productos activos.
+
+8. OBTENER PRODUCTO POR ID
+GET
+/products/1
+
+9. ACTUALIZAR PRODUCTO
+PUT
+/products/1
+Body:
+
+{
+  "name": "Coca Cola Zero",
+  "barcode": "123456",
+  "price": 3200,
+  "stock": 25,
+  "categoryId": 1
+}
+
+10. ELIMINAR PRODUCTO (SOFT DELETE)
+DELETE
+/products/1
+No se borra, solo se desactiva.
+
+11. VERIFICAR SOFT DELETE
+GET
+/products
+El producto eliminado ya no aparece.
+
+12. VER CATEGORÍA CON PRODUCTOS
+GET
+/categories/1
+Debe traer:
+datos de categoría
+lista de productos
