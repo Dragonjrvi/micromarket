@@ -11,11 +11,11 @@
       "item": [
         {
           "name": "Listar categorias",
-          "request": { "method": "GET", "url": "http://localhost:8080/api/categories" }
+          "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/categories" }
         },
         {
           "name": "Obtener categoria por id",
-          "request": { "method": "GET", "url": "http://localhost:8080/api/categories/1" }
+          "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/categories/1" }
         },
         {
           "name": "Crear categoria",
@@ -23,7 +23,7 @@
             "method": "POST",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": { "mode": "raw", "raw": "{ \"name\": \"Bebidas\" }" },
-            "url": "http://localhost:8080/api/categories"
+            "url": "http://localhost:8080/api/v1/api/categories"
           }
         },
         {
@@ -32,20 +32,20 @@
             "method": "PUT",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": { "mode": "raw", "raw": "{ \"name\": \"Bebidas Actualizadas\" }" },
-            "url": "http://localhost:8080/api/categories/1"
+            "url": "http://localhost:8080/api/v1/api/categories/1"
           }
         },
         {
           "name": "Eliminar categoria",
-          "request": { "method": "DELETE", "url": "http://localhost:8080/api/categories/1" }
+          "request": { "method": "DELETE", "url": "http://localhost:8080/api/v1/api/categories/1" }
         },
         {
           "name": "Listar productos",
-          "request": { "method": "GET", "url": "http://localhost:8080/api/products" }
+          "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/products" }
         },
         {
           "name": "Obtener producto por id",
-          "request": { "method": "GET", "url": "http://localhost:8080/api/products/1" }
+          "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/products/1" }
         },
         {
           "name": "Crear producto",
@@ -56,7 +56,7 @@
               "mode": "raw",
               "raw": "{ \"name\": \"Coca Cola\", \"barcode\": \"123456\", \"price\": 3000, \"stock\": 20, \"categoryId\": 1 }"
             },
-            "url": "http://localhost:8080/api/products"
+            "url": "http://localhost:8080/api/v1/api/products"
           }
         },
         {
@@ -68,12 +68,12 @@
               "mode": "raw",
               "raw": "{ \"name\": \"Coca Cola Zero\", \"barcode\": \"123456\", \"price\": 3200, \"stock\": 25, \"categoryId\": 1 }"
             },
-            "url": "http://localhost:8080/api/products/1"
+            "url": "http://localhost:8080/api/v1/api/products/1"
           }
         },
         {
           "name": "Eliminar producto (Soft Delete)",
-          "request": { "method": "DELETE", "url": "http://localhost:8080/api/products/1" }
+          "request": { "method": "DELETE", "url": "http://localhost:8080/api/v1/api/products/1" }
         }
       ]
     },
@@ -81,12 +81,12 @@
     {
       "name": "Modulo II - Proveedores",
       "item": [
-        { "name": "Listar proveedores", "request": { "method": "GET", "url": "http://localhost:8080/api/suppliers" } },
-        { "name": "Obtener proveedor por id", "request": { "method": "GET", "url": "http://localhost:8080/api/suppliers/1" } },
-        { "name": "Crear proveedor", "request": { "method": "POST", "url": "http://localhost:8080/api/suppliers" } },
-        { "name": "Actualizar proveedor", "request": { "method": "PUT", "url": "http://localhost:8080/api/suppliers/1" } },
-        { "name": "Eliminar proveedor", "request": { "method": "DELETE", "url": "http://localhost:8080/api/suppliers/1" } },
-        { "name": "Entrada de almacén", "request": { "method": "POST", "url": "http://localhost:8080/api/warehouse-entry" } }
+        { "name": "Listar proveedores", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/suppliers" } },
+        { "name": "Obtener proveedor por id", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/suppliers/1" } },
+        { "name": "Crear proveedor", "request": { "method": "POST", "url": "http://localhost:8080/api/v1/api/suppliers" } },
+        { "name": "Actualizar proveedor", "request": { "method": "PUT", "url": "http://localhost:8080/api/v1/api/suppliers/1" } },
+        { "name": "Eliminar proveedor", "request": { "method": "DELETE", "url": "http://localhost:8080/api/v1/api/suppliers/1" } },
+        { "name": "Entrada de almacén", "request": { "method": "POST", "url": "http://localhost:8080/api/v1/api/suppliers/stock" } }
       ]
     },
 
@@ -102,7 +102,7 @@
               "mode": "raw",
               "raw": "{ \"cedula\": \"123456\", \"nombre\": \"Juan Perez\", \"cargo\": \"CAJERO\", \"fechaIngreso\": \"2024-01-10\", \"salario\": 1500000 }"
             },
-            "url": "http://localhost:8080/api/employees"
+            "url": "http://localhost:8080/api/v1/api/employees"
           }
         },
         {
@@ -114,11 +114,11 @@
               "mode": "raw",
               "raw": "{ \"cedula\": \"000111\", \"nombre\": \"Error Usuario\", \"cargo\": \"GERENTE\", \"fechaIngreso\": \"2024-01-01\", \"salario\": 2000000 }"
             },
-            "url": "http://localhost:8080/api/employees"
+            "url": "http://localhost:8080/api/v1/api/employees"
           }
         },
-        { "name": "Listar Empleados", "request": { "method": "GET", "url": "http://localhost:8080/api/employees" } },
-        { "name": "Obtener Empleado por ID", "request": { "method": "GET", "url": "http://localhost:8080/api/employees/1" } },
+        { "name": "Listar Empleados", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/employees" } },
+        { "name": "Obtener Empleado por ID", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/employees/1" } },
         {
           "name": "Actualizar Empleado",
           "request": {
@@ -128,12 +128,12 @@
               "mode": "raw",
               "raw": "{ \"cedula\": \"123456\", \"nombre\": \"Juan Actualizado\", \"cargo\": \"AUXILIAR\", \"fechaIngreso\": \"2024-01-10\", \"salario\": 1600000 }"
             },
-            "url": "http://localhost:8080/api/employees/1"
+            "url": "http://localhost:8080/api/v1/api/employees/1"
           }
         },
-        { "name": "Eliminar Empleado", "request": { "method": "DELETE", "url": "http://localhost:8080/api/employees/1" } },
-        { "name": "Filtrar por Cargo", "request": { "method": "GET", "url": "http://localhost:8080/api/employees/cargo/CAJERO" } },
-        { "name": "Filtrar por Fechas", "request": { "method": "GET", "url": "http://localhost:8080/api/employees/fecha?inicio=2023-01-01&fin=2025-01-01" } }
+        { "name": "Eliminar Empleado", "request": { "method": "DELETE", "url": "http://localhost:8080/api/v1/api/employees/1" } },
+        { "name": "Filtrar por Cargo", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/employees/cargo/CAJERO" } },
+        { "name": "Filtrar por Fechas", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/employees/fecha?inicio=2023-01-01&fin=2025-01-01" } }
       ]
     },
 
@@ -149,7 +149,7 @@
               "mode": "raw",
               "raw": "{ \"employeeId\": 1, \"details\": [{ \"productId\": 1, \"quantity\": 2 }, { \"productId\": 2, \"quantity\": 1 }] }"
             },
-            "url": "http://localhost:8080/api/sales"
+            "url": "http://localhost:8080/api/v1/api/sales"
           }
         },
         {
@@ -161,13 +161,12 @@
               "mode": "raw",
               "raw": "{ \"employeeId\": 1, \"details\": [{ \"productId\": 1, \"quantity\": 999 }] }"
             },
-            "url": "http://localhost:8080/api/sales"
+            "url": "http://localhost:8080/api/v1/api/sales"
           }
         },
-        { "name": "Listar Ventas", "request": { "method": "GET", "url": "http://localhost:8080/api/sales" } },
-        { "name": "Obtener Venta por ID", "request": { "method": "GET", "url": "http://localhost:8080/api/sales/1" } }
+        { "name": "Listar Ventas", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/sales" } },
+        { "name": "Obtener Venta por ID", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/sales/1" } }
       ]
     }
-
   ]
 }
