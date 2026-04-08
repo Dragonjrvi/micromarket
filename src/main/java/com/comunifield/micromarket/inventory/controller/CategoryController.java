@@ -13,17 +13,21 @@ import jakarta.validation.Valid;
 @RequiredArgsConstructor
 public class CategoryController {
 
+    private final JwtService jwtService = new JwtService();
     private final CategoryService service;
-
+   
     @PostMapping
     public ResponseEntity<?> create(@Valid @RequestBody CategoryDTO dto) {
         return ResponseEntity.ok(service.create(dto));
     }
 
     @GetMapping
-    public ResponseEntity<?> list() {
-        return ResponseEntity.ok(service.getAll());
-    }
+public ResponseEntity<?> list() {
+    String token = jwtService.generarToken("admin");
+    System.out.println("Token generado: " + token);
+
+    return ResponseEntity.ok(service.getAll());
+}
 
     @GetMapping("/{id}")
     public ResponseEntity<?> get(@PathVariable Long id) {
