@@ -1,5 +1,5 @@
 package com.comunifield.micromarket.inventory.controller;
-
+import com.comunifield.micromarket.security.JwtService;
 import com.comunifield.micromarket.inventory.dto.ProductDTO;
 import com.comunifield.micromarket.inventory.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -13,12 +13,17 @@ import jakarta.validation.Valid;
 @RequiredArgsConstructor
 public class ProductController {
 
+    private final JwtService jwtService = new JwtService();
     private final ProductService service;
 
     @PostMapping
-    public ResponseEntity<?> create(@Valid @RequestBody ProductDTO dto) {
-        return ResponseEntity.ok(service.create(dto));
-    }
+public ResponseEntity<?> create(@Valid @RequestBody ProductDTO dto) {
+
+    String token = jwtService.generarToken("admin");
+    System.out.println("Token generado: " + token);
+
+    return ResponseEntity.ok(service.create(dto));
+}
 
     @GetMapping
     public ResponseEntity<?> list() {
