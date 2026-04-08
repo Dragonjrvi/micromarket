@@ -1,12 +1,17 @@
 package com.comunifield.micromarket.inventory.entity;
 
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
 @Getter @Setter
 public class Product {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,4 +36,13 @@ public class Product {
     @JoinColumn(name = "category_id")
     @JsonBackReference
     private Category category;
+
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(
+        name = "product_supplier",
+        joinColumns = @JoinColumn(name = "product_id"),
+        inverseJoinColumns = @JoinColumn(name = "supplier_id")
+    )
+    private List<Supplier> suppliers = new ArrayList<>();
 }

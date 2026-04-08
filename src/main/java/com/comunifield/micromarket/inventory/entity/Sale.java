@@ -1,0 +1,38 @@
+package com.comunifield.micromarket.inventory.entity;
+
+import com.comunifield.micromarket.inventory.entity.Employee;
+import com.comunifield.micromarket.inventory.entity.SaleDetail;
+import jakarta.persistence.*;
+import lombok.Data;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Data
+@Entity
+@Table(name = "sale")
+public class Sale {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(name="date",nullable = false)
+    private LocalDateTime date;
+
+    @Column(name="subtotal",nullable = false)
+    private Double subtotal;
+    
+    @Column(name="iva",nullable = false)
+    private Double iva;
+
+    @Column(name="total",nullable = false)
+    private Double total;
+
+    @ManyToOne
+    @JoinColumn(name = "employee_id", nullable = false)
+    private Employee employee;
+
+    @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL)
+    private List<SaleDetail> details;
+}

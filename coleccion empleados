@@ -1,0 +1,175 @@
+{
+  "info": {
+    "_postman_id": "modulo3-employees-collection",
+    "name": "Micromarket - Modulo III Empleados",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+
+    {
+      "name": "Crear Empleado",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cedula\": \"123456\",\n  \"nombre\": \"Juan Perez\",\n  \"cargo\": \"CAJERO\",\n  \"fechaIngreso\": \"2024-01-10\",\n  \"salario\": 1500000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employees",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Crear Empleado (Error Cargo Invalido)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cedula\": \"000111\",\n  \"nombre\": \"Error Usuario\",\n  \"cargo\": \"GERENTE\",\n  \"fechaIngreso\": \"2024-01-01\",\n  \"salario\": 2000000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employees",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Listar Empleados",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Obtener Empleado por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees", "1"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Actualizar Empleado",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cedula\": \"123456\",\n  \"nombre\": \"Juan Actualizado\",\n  \"cargo\": \"AUXILIAR\",\n  \"fechaIngreso\": \"2024-01-10\",\n  \"salario\": 1600000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employees/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees", "1"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Eliminar Empleado",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees", "1"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Filtrar por Cargo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees/cargo/CAJERO",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees", "cargo", "CAJERO"]
+        }
+      },
+      "response": []
+    },
+
+    {
+      "name": "Filtrar por Fechas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees/fecha?inicio=2023-01-01&fin=2025-01-01",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "employees", "fecha"],
+          "query": [
+            {
+              "key": "inicio",
+              "value": "2023-01-01"
+            },
+            {
+              "key": "fin",
+              "value": "2025-01-01"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+
+  ]
+}
