@@ -1,5 +1,5 @@
 package com.comunifield.micromarket.inventory.controller;
-
+import com.comunifield.micromarket.security.JwtService;
 import com.comunifield.micromarket.inventory.dto.CategoryDTO;
 import com.comunifield.micromarket.inventory.service.CategoryService;
 import lombok.RequiredArgsConstructor;
