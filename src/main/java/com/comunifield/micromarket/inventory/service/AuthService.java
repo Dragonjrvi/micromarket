@@ -67,6 +67,8 @@ public class AuthService {
 
         Users user = userOptional.get();
 
+        System.out.println("Password request: " + request.getPassword());
+        System.out.println("Password BD: " + user.getPassword());
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             throw new RuntimeException("Contraseña o correo incorrectos");
         }

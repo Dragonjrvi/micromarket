@@ -167,6 +167,60 @@
         { "name": "Listar Ventas", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/sales" } },
         { "name": "Obtener Venta por ID", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/sales/1" } }
       ]
+    },
+    
+    {
+  "name": "Modulo V - Seguridad (JWT)",
+  "item": [
+    {
+      "name": "Registrar usuario",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"username\": \"admin\", \"password\": \"123456\" }"
+        },
+        "url": "http://localhost:8080/api/v1/auth/register"
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"username\": \"admin\", \"password\": \"123456\" }"
+        },
+        "url": "http://localhost:8080/api/v1/auth/login"
+      }
+    },
+    {
+      "name": "Refresh Token",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": "http://localhost:8080/api/v1/auth/refresh"
+      }
+    },
+    {
+      "name": "Listar Usuarios (Protegido)",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": "http://localhost:8080/api/v1/users"
+      }
     }
+  ]
+}
   ]
 }
