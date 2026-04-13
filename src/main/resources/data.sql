@@ -101,6 +101,13 @@ CREATE TABLE sale_detail (
     REFERENCES product(id)
 );
 
+CREATE TABLE users (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
 -- =========================
 -- DATOS DE PRUEBA
 -- =========================
@@ -123,9 +130,6 @@ VALUES ('Distribuidora Nacional', '900123456', '3001234567', 'Bogotá');
 INSERT INTO supplier (name, nit, phone, address)
 VALUES ('Snacks Corp', '900654321', '3017654321', 'Medellín');
 
--- Relación producto-proveedor
-INSERT INTO product_supplier VALUES (1, 1);
-INSERT INTO product_supplier VALUES (2, 2);
 
 -- Empleados
 INSERT INTO employee (document, name, position, hire_date, salary)

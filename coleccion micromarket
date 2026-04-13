@@ -1,95 +1,420 @@
 {
   "info": {
-    "_postman_id": "micromarket-full-collection",
+    "_postman_id": "b08a25a0-2bd4-4672-ac3d-cba97fab7685",
     "name": "Micromarket - Colección Completa",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "45074741",
+    "_collection_link": "https://go.postman.co/collection/45074741-b08a25a0-2bd4-4672-ac3d-cba97fab7685?source=collection_link"
   },
   "item": [
-
     {
       "name": "Modulo I - Inventario",
       "item": [
         {
           "name": "Listar categorias",
-          "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/categories" }
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/categories",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": []
         },
         {
           "name": "Obtener categoria por id",
-          "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/categories/1" }
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/categories/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "categories",
+                "1"
+              ]
+            }
+          },
+          "response": []
         },
         {
           "name": "Crear categoria",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{ \"name\": \"Bebidas\" }" },
-            "url": "http://localhost:8080/api/v1/api/categories"
-          }
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"name\": \"Bebidas\" }"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/categories",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": []
         },
         {
           "name": "Actualizar categoria",
           "request": {
             "method": "PUT",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{ \"name\": \"Bebidas Actualizadas\" }" },
-            "url": "http://localhost:8080/api/v1/api/categories/1"
-          }
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"name\": \"Bebidas Actualizadas\" }"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/categories/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "categories",
+                "1"
+              ]
+            }
+          },
+          "response": []
         },
         {
           "name": "Eliminar categoria",
-          "request": { "method": "DELETE", "url": "http://localhost:8080/api/v1/api/categories/1" }
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/categories/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "categories",
+                "1"
+              ]
+            }
+          },
+          "response": []
         },
         {
           "name": "Listar productos",
-          "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/products" }
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": []
         },
         {
           "name": "Obtener producto por id",
-          "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/products/1" }
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/products/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "products",
+                "1"
+              ]
+            }
+          },
+          "response": []
         },
         {
           "name": "Crear producto",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{ \"name\": \"Coca Cola\", \"barcode\": \"123456\", \"price\": 3000, \"stock\": 20, \"categoryId\": 1 }"
             },
-            "url": "http://localhost:8080/api/v1/api/products"
-          }
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": []
         },
         {
           "name": "Actualizar producto",
           "request": {
             "method": "PUT",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{ \"name\": \"Coca Cola Zero\", \"barcode\": \"123456\", \"price\": 3200, \"stock\": 25, \"categoryId\": 1 }"
             },
-            "url": "http://localhost:8080/api/v1/api/products/1"
-          }
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/products/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "products",
+                "1"
+              ]
+            }
+          },
+          "response": []
         },
         {
           "name": "Eliminar producto (Soft Delete)",
-          "request": { "method": "DELETE", "url": "http://localhost:8080/api/v1/api/products/1" }
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/products/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "products",
+                "1"
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
-
     {
       "name": "Modulo II - Proveedores",
       "item": [
-        { "name": "Listar proveedores", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/suppliers" } },
-        { "name": "Obtener proveedor por id", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/suppliers/1" } },
-        { "name": "Crear proveedor", "request": { "method": "POST", "url": "http://localhost:8080/api/v1/api/suppliers" } },
-        { "name": "Actualizar proveedor", "request": { "method": "PUT", "url": "http://localhost:8080/api/v1/api/suppliers/1" } },
-        { "name": "Eliminar proveedor", "request": { "method": "DELETE", "url": "http://localhost:8080/api/v1/api/suppliers/1" } },
-        { "name": "Entrada de almacén", "request": { "method": "POST", "url": "http://localhost:8080/api/v1/api/suppliers/stock" } }
+        {
+          "name": "Listar proveedores",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/suppliers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "suppliers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener proveedor por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/suppliers/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "suppliers",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear proveedor",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/suppliers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "suppliers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar proveedor",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/suppliers/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "suppliers",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar proveedor",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/suppliers/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "suppliers",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Entrada de almacén",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/suppliers/stock",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "suppliers",
+                "stock"
+              ]
+            }
+          },
+          "response": []
+        }
       ]
     },
-
     {
       "name": "Modulo III - Empleados",
       "item": [
@@ -97,46 +422,223 @@
           "name": "Crear Empleado",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{ \"cedula\": \"123456\", \"nombre\": \"Juan Perez\", \"cargo\": \"CAJERO\", \"fechaIngreso\": \"2024-01-10\", \"salario\": 1500000 }"
             },
-            "url": "http://localhost:8080/api/v1/api/employees"
-          }
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/employees",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "employees"
+              ]
+            }
+          },
+          "response": []
         },
         {
           "name": "Crear Empleado (Error Cargo Invalido)",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{ \"cedula\": \"000111\", \"nombre\": \"Error Usuario\", \"cargo\": \"GERENTE\", \"fechaIngreso\": \"2024-01-01\", \"salario\": 2000000 }"
             },
-            "url": "http://localhost:8080/api/v1/api/employees"
-          }
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/employees",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "employees"
+              ]
+            }
+          },
+          "response": []
         },
-        { "name": "Listar Empleados", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/employees" } },
-        { "name": "Obtener Empleado por ID", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/employees/1" } },
+        {
+          "name": "Listar Empleados",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/employees",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "employees"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Empleado por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/employees/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "employees",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
         {
           "name": "Actualizar Empleado",
           "request": {
             "method": "PUT",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{ \"cedula\": \"123456\", \"nombre\": \"Juan Actualizado\", \"cargo\": \"AUXILIAR\", \"fechaIngreso\": \"2024-01-10\", \"salario\": 1600000 }"
             },
-            "url": "http://localhost:8080/api/v1/api/employees/1"
-          }
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/employees/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "employees",
+                "1"
+              ]
+            }
+          },
+          "response": []
         },
-        { "name": "Eliminar Empleado", "request": { "method": "DELETE", "url": "http://localhost:8080/api/v1/api/employees/1" } },
-        { "name": "Filtrar por Cargo", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/employees/cargo/CAJERO" } },
-        { "name": "Filtrar por Fechas", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/employees/fecha?inicio=2023-01-01&fin=2025-01-01" } }
+        {
+          "name": "Eliminar Empleado",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/employees/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "employees",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filtrar por Cargo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/employees/cargo/CAJERO",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "employees",
+                "cargo",
+                "CAJERO"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filtrar por Fechas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/employees/fecha?inicio=2023-01-01&fin=2025-01-01",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "employees",
+                "fecha"
+              ],
+              "query": [
+                {
+                  "key": "inicio",
+                  "value": "2023-01-01"
+                },
+                {
+                  "key": "fin",
+                  "value": "2025-01-01"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
       ]
     },
-
     {
       "name": "Modulo IV - Ventas",
       "item": [
@@ -144,83 +646,230 @@
           "name": "Crear Venta",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{ \"employeeId\": 1, \"details\": [{ \"productId\": 1, \"quantity\": 2 }, { \"productId\": 2, \"quantity\": 1 }] }"
             },
-            "url": "http://localhost:8080/api/v1/api/sales"
-          }
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/sales",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "sales"
+              ]
+            }
+          },
+          "response": []
         },
         {
           "name": "Crear Venta (Error sin stock)",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{ \"employeeId\": 1, \"details\": [{ \"productId\": 1, \"quantity\": 999 }] }"
             },
-            "url": "http://localhost:8080/api/v1/api/sales"
-          }
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/sales",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "sales"
+              ]
+            }
+          },
+          "response": []
         },
-        { "name": "Listar Ventas", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/sales" } },
-        { "name": "Obtener Venta por ID", "request": { "method": "GET", "url": "http://localhost:8080/api/v1/api/sales/1" } }
+        {
+          "name": "Listar Ventas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/sales",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "sales"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Venta por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/api/sales/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "api",
+                "sales",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
       ]
     },
-    
     {
-  "name": "Modulo V - Seguridad (JWT)",
-  "item": [
-    {
-      "name": "Registrar usuario",
-      "request": {
-        "method": "POST",
-        "header": [
-          { "key": "Content-Type", "value": "application/json" }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{ \"username\": \"admin\", \"password\": \"123456\" }"
+      "name": "Modulo V - Seguridad (JWT)",
+      "item": [
+        {
+          "name": "Registrar usuario",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"username\": \"admin\", \"password\": \"123456\" }"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
         },
-        "url": "http://localhost:8080/api/v1/auth/register"
-      }
-    },
-    {
-      "name": "Login",
-      "request": {
-        "method": "POST",
-        "header": [
-          { "key": "Content-Type", "value": "application/json" }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{ \"username\": \"admin\", \"password\": \"123456\" }"
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"username\": \"admin\", \"password\": \"123456\" }"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
         },
-        "url": "http://localhost:8080/api/v1/auth/login"
-      }
-    },
-    {
-      "name": "Refresh Token",
-      "request": {
-        "method": "GET",
-        "header": [
-          { "key": "Authorization", "value": "Bearer {{token}}" }
-        ],
-        "url": "http://localhost:8080/api/v1/auth/refresh"
-      }
-    },
-    {
-      "name": "Listar Usuarios (Protegido)",
-      "request": {
-        "method": "GET",
-        "header": [
-          { "key": "Authorization", "value": "Bearer {{token}}" }
-        ],
-        "url": "http://localhost:8080/api/v1/users"
-      }
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/auth/refresh",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "refresh"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Usuarios (Protegido)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
     }
-  ]
-}
   ]
 }
