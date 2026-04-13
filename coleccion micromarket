@@ -503,7 +503,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{ \"cedula\": \"000111\", \"nombre\": \"Error Usuario\", \"cargo\": \"GERENTE\", \"fechaIngreso\": \"2024-01-01\", \"salario\": 2000000 }"
+              "raw": "{ \"cedula\": \"000111\", \"nombre\": \"Error Usuario\", \"cargo\": \"AUXILIAR\", \"fechaIngreso\": \"2024-01-01\", \"salario\": 2000000 }"
             },
             "url": {
               "raw": "http://localhost:8080/api/v1/api/employees",
@@ -808,7 +808,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{ \"username\": \"admin\", \"password\": \"123456\" }"
+              "raw": "{ \"username\": \"admin\",\"email\":\"admin@mail.com\",\"password\": \"123456\" }"
             },
             "url": {
               "raw": "http://localhost:8080/api/v1/auth/register",
@@ -839,7 +839,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{ \"username\": \"admin\", \"password\": \"123456\" }"
+              "raw": "{ \"email\": \"admin@mail.com\", \"password\": \"123456\" }"
             },
             "url": {
               "raw": "http://localhost:8080/api/v1/auth/login",
