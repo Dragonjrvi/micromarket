@@ -83,14 +83,18 @@ public class JwtService {
      * @return
      */
     public <T> T extractClaims(String token, Function<Claims, T> resolver) {
-        final Claims claims = Jwts.parser()
+    Claims claims;
+    try {
+        claims = Jwts.parser()
                 .verifyWith(getSignKey())
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();
-
-        return resolver.apply(claims);
+    } catch (ExpiredJwtException e) {
+        claims = e.getClaims();
     }
+    return resolver.apply(claims);
+}
 
     /**
      * Extrae el username del token
@@ -130,19 +134,18 @@ public class JwtService {
      * @return
      */
     public String refreshToken(String token) {
-        Claims claims;
-        try {
-            claims = Jwts.parser()
-                    .verifyWith(getSignKey())
-                    .build()
-                    .parseSignedClaims(token)
-                    .getPayload();
-        } catch (ExpiredJwtException e) {
-            throw new RuntimeException("Token is expired: " + e.getMessage());
-        } catch (JwtException e) {
-            throw new RuntimeException("Token is invalid: " + e.getMessage());
-        }
-
-        return generateToken(claims.get("userId", Long.class), claims.getSubject());
+    Claims claims;
+    try {
+        claims = Jwts.parser()
+                .verifyWith(getSignKey())
+                .build()
+                .parseSignedClaims(token)
+                .getPayload();
+    } catch (ExpiredJwtException e) {
+        claims = e.getClaims(); 
+    } catch (JwtException e) {
+        throw new RuntimeException("Token inválido (Firma incorrecta): " + e.getMessage());
     }
+    return generateToken(claims.get("userId", Long.class), claims.getSubject());
+}
 }
