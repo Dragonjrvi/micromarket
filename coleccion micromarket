@@ -281,7 +281,12 @@
           "name": "Listar proveedores",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "url": {
               "raw": "http://localhost:8080/api/v1/api/suppliers",
               "protocol": "http",
@@ -303,7 +308,12 @@
           "name": "Obtener proveedor por id",
           "request": {
             "method": "GET",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "url": {
               "raw": "http://localhost:8080/api/v1/api/suppliers/1",
               "protocol": "http",
@@ -326,7 +336,16 @@
           "name": "Crear proveedor",
           "request": {
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Eddychips\",\n    \"nit\": \"900657686\",\n    \"phone\": \"30176934983569568\",\n    \"address\": \"Armenia\"\n}"
+            },
             "url": {
               "raw": "http://localhost:8080/api/v1/api/suppliers",
               "protocol": "http",
@@ -348,7 +367,16 @@
           "name": "Actualizar proveedor",
           "request": {
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Eddychips\",\n    \"nit\": \"9006576\",\n    \"phone\": \"301769349\",\n    \"address\": \"Calarca\"\n}"
+            },
             "url": {
               "raw": "http://localhost:8080/api/v1/api/suppliers/1",
               "protocol": "http",
@@ -371,7 +399,12 @@
           "name": "Eliminar proveedor",
           "request": {
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "url": {
               "raw": "http://localhost:8080/api/v1/api/suppliers/1",
               "protocol": "http",
@@ -394,7 +427,16 @@
           "name": "Entrada de almacén",
           "request": {
             "method": "POST",
-            "header": [],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"productId\": 2,\n    \"supplierId\": 1,\n    \"quantity\": 20\n}"
+            },
             "url": {
               "raw": "http://localhost:8080/api/v1/api/suppliers/stock",
               "protocol": "http",
